@@ -13,10 +13,12 @@ import org.hinz.septa._
 case class BusRecord(lat:String,lng:String,label:String,VehicleID:String,BlockID:String,Direction:String,destination:String,Offset:String)
 case class BusRecords(bus: List[BusRecord])
 
+
 class Server(ld:RouteLoader) {
+
   implicit val formats = net.liftweb.json.DefaultFormats
 
-  def liveRoute = Source.fromURL("route.url").getLines.mkString("")
+  val liveRoute = Source.fromFile("route.url").getLines.mkString("")
 
   def getMostRecentLiveData(route: String) =
     parse(Source.fromURL(liveRoute  + route).getLines.mkString("")).extract[BusRecords]

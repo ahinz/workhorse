@@ -2,6 +2,7 @@ package org.hinz.septa
 
 import java.util.Date
 
+
 /**
  * This file contains model definitions for the routes
  *
@@ -47,4 +48,4 @@ case class RoutePoint(id: Int, route_id: Int, lat: Double, lon:Double, ref: Doub
 
 
 case class Interval(id: Int, route_id:Int, bus_data_id1:Int, bus_data_id2:Int,
-                    start_ref: Double, end_ref: Double, recordedAt:Date, t: Double)
+                    start_ref: Double, end_ref: Double, recordedAt:Date, t: Double) 

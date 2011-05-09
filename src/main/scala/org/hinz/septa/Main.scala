@@ -4,7 +4,7 @@ import org.hinz.septa.server._
 import scala.annotation.tailrec
 
 object Main {
-  val db = "/Users/ahinz/src/scala/septa/devdb.db"
+  val db = "/Users/ahinz/src/hobby/workhorse/devdb.db"
     
   val r = new RouteLoader(db)
   val lat = 40.008144
@@ -28,7 +28,7 @@ object Main {
     executeEvery(msec,f)
   }
 
-  val server = new Server(new RouteLoader("/Users/ahinz/src/scala/septa/devdb.db"))
+  val server = new Server(new RouteLoader(db))
 
   def main(args: Array[String]) = {
     executeEvery(1000*60, Unit => server.runMe)
