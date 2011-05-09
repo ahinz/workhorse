@@ -1,0 +1,12 @@
+/**
+ * This file contains model definitions for the routes
+ *
+ * These definitions are loaded using the RouteLoader
+ */
+
+/**
+ * Represents bus data scraped from the septa server
+ *
+ * @param id
+ */
+case class BusData(id: Int, route: String, lat: Double, lon:Double, time: Date, block: String, bus: String)

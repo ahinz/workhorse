@@ -1,0 +1,10 @@
+package org.hinz.septa.server
+
+object main {
+  def blah:Unit = {
+    println("test")
+    sleep(3000)
+    blah
+  }
+
+  def main(args: Array[String]) = blah

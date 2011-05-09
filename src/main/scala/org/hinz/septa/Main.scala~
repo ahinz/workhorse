@@ -1,0 +1,25 @@
+package org.hinz.septa
+
+import org.hinz.septa.server._
+
+object main {
+
+  def time =
+    System.currentTimeMillis()
+
+  @tailrec
+  def executeEvery(msec: Int, f: Unit => Unit):Unit = {
+    val cur = time
+    f()
+    Thread.sleep(msec - (time - cur))
+    executeEvery(msec,f)
+  }
+
+  val server = new Server(new RouteLoader("/Users/ahinz/src/scala/septa/devdb.db"))
+
+  def main(args: Array[String]) = {
+    println("hello")
+    server.runMe
+  }
+
+}
